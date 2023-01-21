@@ -14,6 +14,9 @@ abstract class UserService {
   @GET(ApiPath.users)
   Future<List<User>> getUsers();
 
+  @GET("${ApiPath.users}/{id}")
+  Future<User> getUserById(@Path("id") String id);
+
   @DELETE("${ApiPath.users}/{id}")
   Future<User> deleteUser(@Path("id") String id);
 

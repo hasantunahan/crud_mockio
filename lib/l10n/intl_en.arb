@@ -19,5 +19,6 @@
   "identity" : "Identity",
   "sallary" : "Sallary",
   "required" : "This field is required",
-  "tckn_invalid" : "Enter valid TC number"
+  "tckn_invalid" : "Enter valid TC number",
+  "chef_information" : "Chef Information"
 }

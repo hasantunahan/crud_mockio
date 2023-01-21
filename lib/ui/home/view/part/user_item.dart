@@ -79,53 +79,58 @@ class UserItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8.0),
-      margin: const EdgeInsets.symmetric(vertical: 8.0),
-      decoration: BoxDecoration(
-          border: Border.all(
-            color: context.theme.colorScheme.secondary,
-            width: 1.6,
-          ),
-          borderRadius: BorderRadius.circular(8.0)),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Image.asset(
-                Assets.instance.png.splashView,
-                width: 48,
-                height: 48,
-              ),
-              const SizedBox(width: 8),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      _renderText(context, user.name),
-                      const SizedBox(width: 8),
-                      _renderText(context, user.surname),
-                    ],
-                  ),
-                  if (user.birthDate != null) ...[
-                    _renderRowItem(
-                        context, Icons.date_range, DateFormat('yyyy-MM-dd').format(DateTime.parse(user.birthDate!)))
-                  ]
-                ],
-              )
-            ],
-          ),
-          const SizedBox(height: 8),
-          _renderRowItem(context, Icons.phone_android, user.phoneNumber),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              _renderRowItem(context, Icons.monetization_on_outlined, user.sallary.toString()),
-              _renderDeleteUser(context)
-            ],
-          ),
-        ],
+    return InkWell(
+      onTap: () {
+        viewModel.goChefDetail(user.id!);
+      },
+      child: Container(
+        padding: const EdgeInsets.all(8.0),
+        margin: const EdgeInsets.symmetric(vertical: 8.0),
+        decoration: BoxDecoration(
+            border: Border.all(
+              color: context.theme.colorScheme.secondary,
+              width: 1.6,
+            ),
+            borderRadius: BorderRadius.circular(8.0)),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Image.asset(
+                  Assets.instance.png.splashView,
+                  width: 48,
+                  height: 48,
+                ),
+                const SizedBox(width: 8),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        _renderText(context, user.name),
+                        const SizedBox(width: 8),
+                        _renderText(context, user.surname),
+                      ],
+                    ),
+                    if (user.birthDate != null) ...[
+                      _renderRowItem(
+                          context, Icons.date_range, DateFormat('yyyy-MM-dd').format(DateTime.parse(user.birthDate!)))
+                    ]
+                  ],
+                )
+              ],
+            ),
+            const SizedBox(height: 8),
+            _renderRowItem(context, Icons.phone_android, user.phoneNumber),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _renderRowItem(context, Icons.monetization_on_outlined, user.sallary.toString()),
+                _renderDeleteUser(context)
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

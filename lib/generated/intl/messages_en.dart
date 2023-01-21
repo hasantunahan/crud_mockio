@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "change_en": MessageLookupByLibrary.simpleMessage("English"),
         "change_tr": MessageLookupByLibrary.simpleMessage("Türkçe"),
+        "chef_information":
+            MessageLookupByLibrary.simpleMessage("Chef Information"),
         "chef_management":
             MessageLookupByLibrary.simpleMessage("Chef Management"),
         "delete_chef": MessageLookupByLibrary.simpleMessage("Delete Chef"),

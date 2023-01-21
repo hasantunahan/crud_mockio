@@ -15,4 +15,8 @@ class NavigationRoute {
   // add new chef
   String get addNewChefPath => "addNewChef";
   String get goAddNewChefPath => "/home/addNewChef";
+
+  //  chef detail
+  String get chefDetailPath => "chefDetailPath/:id";
+  String goChefDetailPath(String id) => "/home/chefDetailPath/$id";
 }

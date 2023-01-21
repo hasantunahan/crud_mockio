@@ -19,5 +19,6 @@
   "identity" : "TCKN",
   "sallary" : "Maaş",
   "required" : "Bu alan zorunludur",
-  "tckn_invalid" : "Geçerli TC numarası giriniz"
+  "tckn_invalid" : "Geçerli TC numarası giriniz",
+  "chef_information" : "Şef Bilgileri"
 }

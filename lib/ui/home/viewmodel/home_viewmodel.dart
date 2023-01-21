@@ -27,6 +27,11 @@ abstract class IHomeViewModel with Store {
     NavigationService.instance.router.push(NavigationRoute.instance.goAddNewChefPath);
   }
 
+  @action
+  void goChefDetail(String id) {
+    NavigationService.instance.router.push(NavigationRoute.instance.goChefDetailPath(id));
+  }
+
   Future<void> fetchUser() async {
     changeLoading(true);
     final res = await userRepository.getUsers();

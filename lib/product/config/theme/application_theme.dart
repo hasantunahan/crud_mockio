@@ -36,7 +36,7 @@ class ApplicationTheme {
     ),
     appBarTheme: const AppBarTheme(
         backgroundColor: _DefaultThemeColors.secondary,
-        toolbarHeight: kToolbarHeight * 1.8,
+        toolbarHeight: kToolbarHeight * 2.1,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(24),

@@ -1,5 +1,6 @@
 import 'package:crud_mockio/product/config/navigation/navigation_route.dart';
 import 'package:crud_mockio/ui/home/subview/add_new_chef/view/add_new_chef.dart';
+import 'package:crud_mockio/ui/home/subview/chef_detail/view/chef_detail_view.dart';
 import 'package:crud_mockio/ui/home/view/home_view.dart';
 import 'package:crud_mockio/ui/splash/view/splash_view.dart';
 import 'package:flutter/widgets.dart';
@@ -33,6 +34,13 @@ class NavigationService {
               GoRoute(
                 path: NavigationRoute.instance.addNewChefPath,
                 builder: (context, state) => const AddNewChef(),
+              ),
+              GoRoute(
+                path: NavigationRoute.instance.chefDetailPath,
+                builder: (context, state) {
+                  final userId = state.params['id'] ?? '';
+                  return ChefDetail(userId: userId);
+                },
               ),
             ],
           ),
