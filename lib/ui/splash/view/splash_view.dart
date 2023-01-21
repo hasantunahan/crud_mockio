@@ -16,7 +16,7 @@ class SplashView extends StatelessWidget {
           children: [
             Image.asset(
               Assets.instance.png.splashView,
-              width: context.width * .5,
+              width: context.width * .36,
               fit: BoxFit.cover,
             ),
             Text(
