@@ -1,5 +1,6 @@
 import 'package:crud_mockio/injection.dart';
 import 'package:crud_mockio/product/config/navigation/navigation_service.dart';
+import 'package:crud_mockio/product/constant/app_key.dart';
 import 'package:crud_mockio/product/extension/context_extension.dart';
 import 'package:crud_mockio/product/widget/base/base_wrapper.dart';
 import 'package:crud_mockio/ui/home/view/part/user_item.dart';
@@ -44,6 +45,7 @@ class _HomeViewState extends State<HomeView> with WidgetsBindingObserver, RouteA
         viewModel.fetchUser();
       },
       child: ListView.builder(
+        key: AppKey.instance.chefsListView,
         shrinkWrap: true,
         itemCount: viewModel.listOfUser!.length,
         itemBuilder: (context, index) {
@@ -109,6 +111,7 @@ class _HomeViewState extends State<HomeView> with WidgetsBindingObserver, RouteA
     return SizedBox(
       width: context.width,
       child: ElevatedButton(
+        key: AppKey.instance.addNewChef,
         onPressed: () {
           viewModel.goAddNewChef();
         },

@@ -1,4 +1,5 @@
 import 'package:crud_mockio/product/config/environment/environment_preset.dart';
+import 'package:crud_mockio/product/constant/app_key.dart';
 import 'package:crud_mockio/product/extension/context_extension.dart';
 import 'package:crud_mockio/product/widget/settings/settings_bottom_sheet.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ class BaseWrapper extends StatelessWidget {
 
   Widget _renderSettings(BuildContext context) {
     return GestureDetector(
+      key: AppKey.instance.settingsButton,
       onTap: () => showSettings(context),
       child: const Padding(
         padding: EdgeInsets.all(8.0),
@@ -55,8 +57,8 @@ class BaseWrapper extends StatelessWidget {
           children: [
             if (title != null) ...[
               title!,
-              _renderInfoText(EnvironmentPreset.instance.config.applicationName,context),
-              _renderInfoText(EnvironmentPreset.instance.config.versionName,context),
+              _renderInfoText(EnvironmentPreset.instance.config.applicationName, context),
+              _renderInfoText(EnvironmentPreset.instance.config.versionName, context),
             ]
           ],
         ),
