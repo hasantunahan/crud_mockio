@@ -1,6 +1,7 @@
 import 'package:crud_mockio/injection.dart';
 import 'package:crud_mockio/product/extension/context_extension.dart';
 import 'package:crud_mockio/product/widget/base/base_wrapper.dart';
+import 'package:crud_mockio/ui/home/view/part/user_item.dart';
 import 'package:crud_mockio/ui/home/viewmodel/home_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -26,7 +27,7 @@ class _HomeViewState extends State<HomeView> {
       itemCount: viewModel.listOfUser!.length,
       itemBuilder: (context, index) {
         final user = viewModel.listOfUser![index];
-        return Text(user.name ?? context.translate.unknown);
+        return UserItem(user: user);
       },
     );
   }

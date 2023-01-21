@@ -7,7 +7,7 @@ class User {
   String? name;
   String? surname;
   String? birthDate;
-  String? sallary;
+  int? sallary;
   String? phoneNumber;
   String? identity;
   String? id;
