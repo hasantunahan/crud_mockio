@@ -5,7 +5,7 @@ import 'package:crud_mockio/network/model/user/user.dart';
 import 'package:dio/dio.dart';
 import "package:retrofit/retrofit.dart";
 
-part "user_service.g.dart";
+part 'user_service.g.dart';
 
 @RestApi()
 abstract class UserService {

@@ -69,6 +69,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Chef list not found`
+  String get user_not_found {
+    return Intl.message(
+      'Chef list not found',
+      name: 'user_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown`
+  String get unknown {
+    return Intl.message(
+      'Unknown',
+      name: 'unknown',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

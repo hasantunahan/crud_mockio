@@ -1,4 +1,6 @@
 {
   "splash_view" : "Açılış Ekranı",
-  "chef_management" : "Şef Yönetimi"
+  "chef_management" : "Şef Yönetimi",
+  "user_not_found" : "Şef listesi bulunamadı",
+  "unknown" : "Bilinmeyen"
 }

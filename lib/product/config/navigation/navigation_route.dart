@@ -8,6 +8,7 @@ class NavigationRoute {
   }
 
   String get splash => '/';
-
-
+  // home manage
+  String get homePath => 'home';
+  String get goHome => '/home';
 }

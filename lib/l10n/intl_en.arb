@@ -1,4 +1,6 @@
 {
   "splash_view" : "Splash View",
-  "chef_management" : "Chef Management"
+  "chef_management" : "Chef Management",
+  "user_not_found" : "Chef list not found",
+  "unknown" : "Unknown"
 }
