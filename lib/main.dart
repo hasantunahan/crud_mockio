@@ -40,8 +40,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'CHEF CRUD MOCKIO',
       theme: ApplicationTheme.defaultTheme,
-      locale:
-          Provider.of<LanguageProvider>(context, listen: true).currentLocale,
+      locale: Provider.of<LanguageProvider>(context, listen: true).currentLocale,
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -51,11 +50,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       supportedLocales: S.delegate.supportedLocales,
       routerDelegate: NavigationService.instance.router.routerDelegate,
-      routeInformationProvider:
-          NavigationService.instance.router.routeInformationProvider,
-      routeInformationParser:
-          NavigationService.instance.router.routeInformationParser,
+      routeInformationProvider: NavigationService.instance.router.routeInformationProvider,
+      routeInformationParser: NavigationService.instance.router.routeInformationParser,
     );
-    ;
   }
 }
