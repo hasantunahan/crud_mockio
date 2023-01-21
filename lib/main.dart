@@ -1,6 +1,10 @@
+import 'package:crud_mockio/generated/l10n.dart';
 import 'package:crud_mockio/injection.dart';
+import 'package:crud_mockio/product/config/navigation/navigation_service.dart';
+import 'package:crud_mockio/product/manager/provider/child/language_provider.dart';
 import 'package:crud_mockio/product/manager/provider/provider_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'product/config/environment/environment_preset.dart';
 
@@ -32,12 +36,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'CRUD MOCKIO',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Scaffold(),
+      locale:
+          Provider.of<LanguageProvider>(context, listen: true).currentLocale,
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      debugShowCheckedModeBanner: false,
+      supportedLocales: S.delegate.supportedLocales,
+      routerDelegate: NavigationService.instance.router.routerDelegate,
+      routeInformationProvider:
+          NavigationService.instance.router.routeInformationProvider,
+      routeInformationParser:
+          NavigationService.instance.router.routeInformationParser,
     );
+    ;
   }
 }

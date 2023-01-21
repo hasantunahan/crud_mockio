@@ -1,3 +1,5 @@
+import 'package:crud_mockio/product/manager/provider/child/language_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
 class ProviderManager {
@@ -8,5 +10,11 @@ class ProviderManager {
     return _instance!;
   }
 
-  List<SingleChildWidget> listOfProvider = [];
+  List<SingleChildWidget> listOfProvider = [
+    ChangeNotifierProvider(
+      create: (context) {
+        return LanguageProvider();
+      },
+    ),
+  ];
 }
