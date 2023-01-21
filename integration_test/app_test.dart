@@ -13,6 +13,7 @@ void main() {
     await Future.delayed(Duration(milliseconds: time));
   }
 
+  /// TODO : i created a minimal test run
   group('end-to-end test', () {
     testWidgets('Crud mock_io automation test', (tester) async {
       app.main();
