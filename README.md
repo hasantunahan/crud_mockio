@@ -12,11 +12,11 @@ Instructions on how to use them in your own application are linked below.
 
 For State Management
 # navigation
--go_router: ^4.5.1
+ 1. go_router: ^4.5.1
 
-# dependency injection
--get_it: ^7.2.0
--injectable: ^1.5.3
+# dependency injection 
+ 1. get_it: ^7.2.0
+ 2. injectable: ^1.5.3
 
 # generate json method
 -json_annotation: ^4.7.0
