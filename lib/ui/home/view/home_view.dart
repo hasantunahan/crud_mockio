@@ -1,4 +1,5 @@
 import 'package:crud_mockio/injection.dart';
+import 'package:crud_mockio/product/config/navigation/navigation_service.dart';
 import 'package:crud_mockio/product/extension/context_extension.dart';
 import 'package:crud_mockio/product/widget/base/base_wrapper.dart';
 import 'package:crud_mockio/ui/home/view/part/user_item.dart';
@@ -13,35 +14,66 @@ class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomeViewState extends State<HomeView> with WidgetsBindingObserver, RouteAware {
   final viewModel = getIt<IHomeViewModel>();
 
   @override
   void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      NavigationService.instance.routeObserver.subscribe(this, ModalRoute.of(context)!);
+    });
     super.initState();
     viewModel.init();
   }
 
-  ListView _renderListOfUser() {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: viewModel.listOfUser!.length,
-      itemBuilder: (context, index) {
-        final user = viewModel.listOfUser![index];
-        return UserItem(user: user);
+  @override
+  void dispose() {
+    NavigationService.instance.routeObserver.unsubscribe(this);
+    super.dispose();
+  }
+
+  @override
+  void didPopNext() {
+    super.didPopNext();
+    viewModel.fetchUser();
+  }
+
+  Widget _renderListOfUser() {
+    return RefreshIndicator(
+      onRefresh: () async {
+        viewModel.fetchUser();
       },
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: viewModel.listOfUser!.length,
+        itemBuilder: (context, index) {
+          final user = viewModel.listOfUser![index];
+          return UserItem(
+            user: user,
+            viewModel: viewModel,
+          );
+        },
+      ),
     );
   }
 
   Widget _renderUserNotFound() {
     return Center(
-      child: Row(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(
-            Icons.error,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.error,
+              ),
+              const SizedBox(width: 8),
+              Text(context.translate.user_not_found),
+            ],
           ),
-          const SizedBox(width: 8),
-          Text(context.translate.user_not_found),
+          const SizedBox(height: 12),
+          _renderAddNewChef(),
         ],
       ),
     );
@@ -62,13 +94,7 @@ class _HomeViewState extends State<HomeView> {
       } else {
         return Column(
           children: [
-            SizedBox(
-              width: context.width,
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text(context.translate.add_new_chef),
-              ),
-            ),
+            _renderAddNewChef(),
             const SizedBox(height: 8),
             Expanded(
               child: _renderListOfUser(),
@@ -77,6 +103,16 @@ class _HomeViewState extends State<HomeView> {
         );
       }
     }
+  }
+
+  Widget _renderAddNewChef() {
+    return SizedBox(
+      width: context.width,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Text(context.translate.add_new_chef),
+      ),
+    );
   }
 
   @override

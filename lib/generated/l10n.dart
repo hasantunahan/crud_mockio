@@ -129,6 +129,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Delete Chef`
+  String get delete_chef {
+    return Intl.message(
+      'Delete Chef',
+      name: 'delete_chef',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete the chef?`
+  String get delete_chef_confirm {
+    return Intl.message(
+      'Are you sure you want to delete the chef?',
+      name: 'delete_chef_confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Operation Successfully`
+  String get operation_successfully {
+    return Intl.message(
+      'Operation Successfully',
+      name: 'operation_successfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

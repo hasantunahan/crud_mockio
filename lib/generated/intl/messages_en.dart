@@ -23,12 +23,19 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add_new_chef": MessageLookupByLibrary.simpleMessage("Add New Chef"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "change_en": MessageLookupByLibrary.simpleMessage("English"),
         "change_tr": MessageLookupByLibrary.simpleMessage("Türkçe"),
         "chef_management":
             MessageLookupByLibrary.simpleMessage("Chef Management"),
+        "delete_chef": MessageLookupByLibrary.simpleMessage("Delete Chef"),
+        "delete_chef_confirm": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to delete the chef?"),
         "language_chose":
             MessageLookupByLibrary.simpleMessage("Language Choose"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "operation_successfully":
+            MessageLookupByLibrary.simpleMessage("Operation Successfully"),
         "splash_view": MessageLookupByLibrary.simpleMessage("Splash View"),
         "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
         "user_not_found":

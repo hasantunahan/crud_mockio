@@ -6,5 +6,10 @@
   "language_chose" : "Dil Seçimi",
   "change_tr" : "Türkçe",
   "change_en" : "English",
-  "add_new_chef" : "Yeni Şef Ekle"
+  "add_new_chef": "Yeni Şef Ekle",
+  "delete_chef": "Şefi Sil",
+  "delete_chef_confirm": "Şefi silmek istediğinize emin misiniz?",
+  "ok" : "Tamam",
+  "cancel": "İptal",
+  "operation_successfully": "İşlem başarılı"
 }

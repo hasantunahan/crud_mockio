@@ -1,14 +1,17 @@
 import 'package:crud_mockio/network/model/user/user.dart';
 import 'package:crud_mockio/product/constant/assets.dart';
 import 'package:crud_mockio/product/extension/context_extension.dart';
+import 'package:crud_mockio/ui/home/viewmodel/home_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class UserItem extends StatelessWidget {
   final User user;
+  final IHomeViewModel viewModel;
   const UserItem({
     required this.user,
     Key? key,
+    required this.viewModel,
   }) : super(key: key);
 
   Widget _renderText(BuildContext context, String? value) {
@@ -36,6 +39,44 @@ class UserItem extends StatelessWidget {
     );
   }
 
+  Widget _renderDeleteUser(BuildContext context) {
+    return IconButton(
+      padding: EdgeInsets.zero,
+      tooltip: context.translate.delete_chef,
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text(
+                context.translate.delete_chef_confirm,
+                style: context.theme.textTheme.bodyText1,
+              ),
+              actions: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(context.translate.cancel),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                    viewModel.deleteUser(user.id!);
+                  },
+                  child: Text(context.translate.ok),
+                ),
+              ],
+            );
+          },
+        );
+      },
+      icon: const Icon(
+        Icons.delete_forever_sharp,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,6 +85,7 @@ class UserItem extends StatelessWidget {
       decoration: BoxDecoration(
           border: Border.all(
             color: context.theme.colorScheme.secondary,
+            width: 1.6,
           ),
           borderRadius: BorderRadius.circular(8.0)),
       child: Column(
@@ -67,8 +109,8 @@ class UserItem extends StatelessWidget {
                     ],
                   ),
                   if (user.birthDate != null) ...[
-                    _renderRowItem(context, Icons.date_range,
-                        DateFormat('yyyy-MM-dd').format(DateTime.parse(user.birthDate!)))
+                    _renderRowItem(
+                        context, Icons.date_range, DateFormat('yyyy-MM-dd').format(DateTime.parse(user.birthDate!)))
                   ]
                 ],
               )
@@ -76,12 +118,15 @@ class UserItem extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           _renderRowItem(context, Icons.phone_android, user.phoneNumber),
-          const SizedBox(height: 8),
-          _renderRowItem(context, Icons.monetization_on_outlined, user.sallary.toString())
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _renderRowItem(context, Icons.monetization_on_outlined, user.sallary.toString()),
+              _renderDeleteUser(context)
+            ],
+          ),
         ],
       ),
     );
   }
-
-
 }

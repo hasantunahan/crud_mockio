@@ -27,6 +27,13 @@ abstract class IHomeViewModel with Store {
     listOfUser = res;
   }
 
+  Future<void> deleteUser(String id) async {
+    changeLoading(true);
+    await userRepository.deleteUser(id);
+    await fetchUser();
+    changeLoading(false);
+  }
+
   Future<void> init() async {
     await fetchUser();
   }

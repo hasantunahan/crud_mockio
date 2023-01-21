@@ -16,4 +16,14 @@ class UserRepository implements IUserRepository {
       return [];
     }
   }
+
+  @override
+  Future<User> deleteUser(String id) async {
+    try {
+      final res = await userService.deleteUser(id);
+      return res;
+    } catch (e) {
+      return User();
+    }
+  }
 }
