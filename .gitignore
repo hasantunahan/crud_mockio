@@ -32,6 +32,7 @@
 .pub/
 /build/
 *.g.dart
+*.config.dart
 flutter_*.png
 linked_*.ds
 unlinked.ds
