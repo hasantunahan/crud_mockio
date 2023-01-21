@@ -1,16 +1,47 @@
-# crud_mockio
+# CHEF CRUD MOCK IO 🌱
 
-CRUD MOCK IO
+## VERSIONS
+
+Instructions on how to use them in your own application are linked below.
+
+| Name         | Version |
+|--------------|---------|
+| Flutter      | 3.0.5   |
+
+## Used Library
+
+For State Management
+# navigation
+-go_router: ^4.5.1
+
+# dependency injection
+-get_it: ^7.2.0
+-injectable: ^1.5.3
+
+# generate json method
+-json_annotation: ^4.7.0
+-json_serializable: ^6.3.1
+
+# rest api
+-retrofit: ^3.0.0
+-dio: ^4.0.3
+
+# State Management
+-provider: ^6.0.2
+-mobx: ^2.0.6+1
+-mobx_codegen: ^2.0.5+2
+-flutter_mobx: ^2.0.4
+
+## Installation
 
 1. flutter pub get
 2. flutter pub run build_runner build --delete-conflicting-outputs
 
-This project is a starting point for a Flutter application.
-A few resources to get you started if this is your first Flutter project:
+## For IOS
+1. cd ios && pod install
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## SS
+<img align="left" src="android_uat.png" width ="200" height="420" >
+<img align="left" src="ios_prod_1.png" width ="200" height="420" >
+
