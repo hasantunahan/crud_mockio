@@ -11,14 +11,29 @@ class SettingsBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              width: context.width,
+              child: Center(
+                child: SizedBox(
+                  width: context.width*.16,
+                  child:  Divider(
+                    color: context.theme.colorScheme.secondary,
+                    thickness: 3,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
             Row(
               children: [
                 const Icon(Icons.translate),
-                const SizedBox(width: 8,),
+                const SizedBox(
+                  width: 8,
+                ),
                 Text(
                   context.translate.language_chose,
                   style: context.theme.textTheme.subtitle1,

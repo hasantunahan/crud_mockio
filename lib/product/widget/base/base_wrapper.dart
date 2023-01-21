@@ -18,7 +18,7 @@ class BaseWrapper extends StatelessWidget {
   void showSettings(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: context.theme.colorScheme.secondaryContainer,
+      backgroundColor: context.theme.colorScheme.onSecondaryContainer,
       builder: (context) {
         return const SettingsBottomSheet();
       },
