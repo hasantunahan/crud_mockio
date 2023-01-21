@@ -22,7 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "change_en": MessageLookupByLibrary.simpleMessage("English"),
+        "change_tr": MessageLookupByLibrary.simpleMessage("Türkçe"),
         "chef_management": MessageLookupByLibrary.simpleMessage("Şef Yönetimi"),
+        "language_chose": MessageLookupByLibrary.simpleMessage("Dil Seçimi"),
         "splash_view": MessageLookupByLibrary.simpleMessage("Açılış Ekranı"),
         "unknown": MessageLookupByLibrary.simpleMessage("Bilinmeyen"),
         "user_not_found":

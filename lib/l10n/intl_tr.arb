@@ -2,5 +2,8 @@
   "splash_view" : "Açılış Ekranı",
   "chef_management" : "Şef Yönetimi",
   "user_not_found" : "Şef listesi bulunamadı",
-  "unknown" : "Bilinmeyen"
+  "unknown" : "Bilinmeyen",
+  "language_chose" : "Dil Seçimi",
+  "change_tr" : "Türkçe",
+  "change_en" : "English"
 }

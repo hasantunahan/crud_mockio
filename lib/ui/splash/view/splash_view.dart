@@ -24,6 +24,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return BaseWrapper(
+      hideSettings: true,
       child: Center(
         child: Image.asset(
           Assets.instance.png.splashView,

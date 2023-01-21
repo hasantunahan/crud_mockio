@@ -2,5 +2,8 @@
   "splash_view" : "Splash View",
   "chef_management" : "Chef Management",
   "user_not_found" : "Chef list not found",
-  "unknown" : "Unknown"
+  "unknown" : "Unknown",
+  "language_chose" : "Language Choose",
+  "change_tr" : "Türkçe",
+  "change_en" : "English"
 }

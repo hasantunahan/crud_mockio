@@ -89,6 +89,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Language Choose`
+  String get language_chose {
+    return Intl.message(
+      'Language Choose',
+      name: 'language_chose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Türkçe`
+  String get change_tr {
+    return Intl.message(
+      'Türkçe',
+      name: 'change_tr',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get change_en {
+    return Intl.message(
+      'English',
+      name: 'change_en',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
