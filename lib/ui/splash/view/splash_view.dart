@@ -1,6 +1,8 @@
 import 'package:crud_mockio/product/extension/context_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../../product/constant/assets.dart';
+
 class SplashView extends StatelessWidget {
   const SplashView({Key? key}) : super(key: key);
 
@@ -13,7 +15,7 @@ class SplashView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/splash_view.png',
+              Assets.instance.png.splashView,
               width: context.width * .5,
               fit: BoxFit.cover,
             ),
