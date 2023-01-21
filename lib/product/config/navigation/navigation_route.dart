@@ -11,4 +11,8 @@ class NavigationRoute {
   // home manage
   String get homePath => 'home';
   String get goHome => '/home';
+
+  // add new chef
+  String get addNewChefPath => "addNewChef";
+  String get goAddNewChefPath => "/home/addNewChef";
 }

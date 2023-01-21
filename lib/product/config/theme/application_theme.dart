@@ -44,6 +44,9 @@ class ApplicationTheme {
           bottomRight: Radius.circular(24),
         ),
       ),
+      iconTheme: IconThemeData(
+        color: _DefaultThemeColors.white,
+      )
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(

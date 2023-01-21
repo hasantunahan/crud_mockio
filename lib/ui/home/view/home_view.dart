@@ -109,7 +109,9 @@ class _HomeViewState extends State<HomeView> with WidgetsBindingObserver, RouteA
     return SizedBox(
       width: context.width,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          viewModel.goAddNewChef();
+        },
         child: Text(context.translate.add_new_chef),
       ),
     );

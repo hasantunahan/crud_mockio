@@ -1,5 +1,7 @@
 import 'package:crud_mockio/network/model/user/user.dart';
 import 'package:crud_mockio/network/repository/user/i_user_repository.dart';
+import 'package:crud_mockio/product/config/navigation/navigation_route.dart';
+import 'package:crud_mockio/product/config/navigation/navigation_service.dart';
 import 'package:injectable/injectable.dart';
 import "package:mobx/mobx.dart";
 
@@ -19,6 +21,11 @@ abstract class IHomeViewModel with Store {
 
   @observable
   List<User>? listOfUser;
+
+  @action
+  void goAddNewChef() {
+    NavigationService.instance.router.push(NavigationRoute.instance.goAddNewChefPath);
+  }
 
   Future<void> fetchUser() async {
     changeLoading(true);
