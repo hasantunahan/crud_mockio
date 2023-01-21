@@ -5,10 +5,10 @@ class ProdEnvironmentPreset implements IEnvironmentPreset {
   String get apiBaseUrl => "https://63cac723f36cbbdfc7600797.mockapi.io";
 
   @override
-  String get applicationId => "prod";
+  String get applicationId => "neyasis.case.prod";
 
   @override
-  String get applicationName => "prod";
+  String get applicationName => "Neyasis";
 
   @override
   String get versionCode => "3";

@@ -1,3 +1,4 @@
+import 'package:crud_mockio/product/config/environment/environment_preset.dart';
 import 'package:crud_mockio/product/extension/context_extension.dart';
 import 'package:crud_mockio/product/widget/settings/settings_bottom_sheet.dart';
 import 'package:flutter/material.dart';
@@ -36,11 +37,30 @@ class BaseWrapper extends StatelessWidget {
     );
   }
 
+  Widget _renderInfoText(String text, BuildContext context) {
+    return Text(
+      text,
+      style: context.theme.textTheme.caption?.copyWith(
+        color: Colors.white,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: title,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (title != null) ...[
+              title!,
+              _renderInfoText(EnvironmentPreset.instance.config.applicationName,context),
+              _renderInfoText(EnvironmentPreset.instance.config.versionName,context),
+            ]
+          ],
+        ),
+        centerTitle: false,
         actions: [
           if (!hideSettings) ...[_renderSettings(context)]
         ],

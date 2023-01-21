@@ -5,10 +5,10 @@ class UatEnvironmentPreset implements IEnvironmentPreset {
   String get apiBaseUrl => "https://63cac723f36cbbdfc7600797.mockapi.io";
 
   @override
-  String get applicationId => "uat";
+  String get applicationId => "neyasis.case.uat";
 
   @override
-  String get applicationName => "uat";
+  String get applicationName => "Neyasis Uat";
 
   @override
   String get versionCode => "2";

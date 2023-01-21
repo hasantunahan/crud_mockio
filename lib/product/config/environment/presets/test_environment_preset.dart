@@ -6,10 +6,10 @@ class TestEnvironmentPreset implements IEnvironmentPreset {
   String get apiBaseUrl => "https://63cac723f36cbbdfc7600797.mockapi.io";
 
   @override
-  String get applicationId => "test";
+  String get applicationId => "neyasis.case.test";
 
   @override
-  String get applicationName => "test";
+  String get applicationName => "Neyasis Test";
 
   @override
   String get versionCode => "1";
