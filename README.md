@@ -12,25 +12,25 @@ Instructions on how to use them in your own application are linked below.
 
 For State Management
 # navigation
--go_router: ^4.5.1
+1.go_router: ^4.5.1
 
 # dependency injection
--get_it: ^7.2.0
--injectable: ^1.5.3
+1.get_it: ^7.2.0
+2.injectable: ^1.5.3
 
 # generate json method
--json_annotation: ^4.7.0
--json_serializable: ^6.3.1
+1.json_annotation: ^4.7.0
+2.json_serializable: ^6.3.1
 
 # rest api
--retrofit: ^3.0.0
--dio: ^4.0.3
+1.retrofit: ^3.0.0
+2.dio: ^4.0.3
 
 # State Management
--provider: ^6.0.2
--mobx: ^2.0.6+1
--mobx_codegen: ^2.0.5+2
--flutter_mobx: ^2.0.4
+1.provider: ^6.0.2
+2.mobx: ^2.0.6+1
+3.mobx_codegen: ^2.0.5+2
+4.flutter_mobx: ^2.0.4
 
 ## Installation
 
