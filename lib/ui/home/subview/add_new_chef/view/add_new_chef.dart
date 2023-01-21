@@ -20,20 +20,18 @@ class AddNewChef extends StatefulWidget {
 class _AddNewChefState extends State<AddNewChef> {
   final viewModel = getIt<IAddNewChefViewModel>();
 
-  @override
-  void initState() {
-    super.initState();
-    viewModel.init();
-  }
-
   TextFormField _renderFormField(
     BuildContext context, {
     required String labelText,
     String? Function(String? value)? validator,
+    void Function(String value)? onChanged,
     TextInputType? keyboardType,
   }) {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       cursorColor: context.theme.colorScheme.tertiary,
+      keyboardType: keyboardType,
+      onChanged: onChanged,
       validator: (value) {
         if (validator == null) {
           return Validator.instance.isNotEmpty(value, context);
@@ -41,7 +39,6 @@ class _AddNewChefState extends State<AddNewChef> {
           return validator.call(value);
         }
       },
-      keyboardType: keyboardType,
       decoration: InputDecoration(
         labelText: labelText,
       ),
@@ -61,6 +58,121 @@ class _AddNewChefState extends State<AddNewChef> {
     viewModel.changeSelectedDate(value: res);
   }
 
+  DatePickerButton _renderDatePicker(BuildContext context) {
+    return DatePickerButton(
+      validator: (value) {
+        if (value == null) {
+          return context.translate.required;
+        } else {
+          return null;
+        }
+      },
+      autoValidateMode: AutovalidateMode.onUserInteraction,
+      hintText: context.translate.birth_date,
+      formatter: DateFormat.yMMMMd(),
+      locale: context.read<LanguageProvider>().currentLocale,
+      onChanged: (value) {
+        viewModel.changeSelectedDate(value: value);
+      },
+      selectText: context.translate.ok,
+      closeText: context.translate.cancel,
+    );
+  }
+
+  Widget _renderBody(BuildContext context) {
+    if (viewModel.loading) {
+      return const Center(
+        child: CircularProgressIndicator.adaptive(),
+      );
+    } else {
+      return _renderFormElement(context);
+    }
+  }
+
+  Form _renderFormElement(BuildContext context) {
+    return Form(
+      key: viewModel.addFormKey,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                    child: _renderFormField(
+                  context,
+                  labelText: context.translate.name,
+                  onChanged: (value) {
+                    viewModel.changeUserFromForm(viewModel.user.copyWith(
+                      name: value,
+                    ));
+                  },
+                )),
+                const SizedBox(width: 12),
+                Expanded(
+                    child: _renderFormField(
+                  context,
+                  onChanged: (value) {
+                    viewModel.changeUserFromForm(viewModel.user.copyWith(
+                      surname: value,
+                    ));
+                  },
+                  labelText: context.translate.surname,
+                )),
+              ],
+            ),
+            const SizedBox(height: 12),
+            _renderFormField(
+              context,
+              labelText: context.translate.identity,
+              validator: (value) => Validator.instance.isTCKN(value, context),
+              onChanged: (value) {
+                viewModel.changeUserFromForm(viewModel.user.copyWith(
+                  identity: value,
+                ));
+              },
+            ),
+            const SizedBox(height: 12),
+            _renderDatePicker(context),
+            const SizedBox(height: 12),
+            _renderFormField(
+              context,
+              labelText: context.translate.phone_number,
+              onChanged: (value) {
+                viewModel.changeUserFromForm(viewModel.user.copyWith(
+                  phoneNumber: value,
+                ));
+              },
+            ),
+            const SizedBox(height: 12),
+            _renderFormField(
+              context,
+              labelText: context.translate.sallary,
+              keyboardType: TextInputType.number,
+              onChanged: (value) {
+                viewModel.changeUserFromForm(viewModel.user.copyWith(
+                  sallary: int.tryParse(value),
+                ));
+              },
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: context.width,
+              child: ElevatedButton(
+                onPressed: () {
+                  if (viewModel.addFormKey.currentState!.validate()) {
+                    viewModel.addNewChef();
+                  }
+                },
+                child: Text(context.translate.ok),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return BaseWrapper(
@@ -70,60 +182,9 @@ class _AddNewChefState extends State<AddNewChef> {
           color: Colors.white,
         ),
       ),
-      child: Form(
-        key: viewModel.addFormKey,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Expanded(child: _renderFormField(context, labelText: context.translate.name)),
-                  const SizedBox(width: 12),
-                  Expanded(child: _renderFormField(context, labelText: context.translate.surname)),
-                ],
-              ),
-              const SizedBox(height: 12),
-              _renderFormField(context, labelText: context.translate.identity),
-              const SizedBox(height: 12),
-              DatePickerButton(
-                validator: (value) {
-                  if (value == null) {
-                    return context.translate.required;
-                  } else {
-                    return null;
-                  }
-                },
-                hintText: context.translate.birth_date,
-                formatter: DateFormat.yMMMMd(),
-                locale: context.read<LanguageProvider>().currentLocale,
-                onChanged: (value) {
-                  viewModel.changeSelectedDate(value: value);
-                },
-                selectText: context.translate.ok,
-                closeText: context.translate.cancel,
-              ),
-              const SizedBox(height: 12),
-              _renderFormField(context, labelText: context.translate.phone_number),
-              const SizedBox(height: 12),
-              _renderFormField(
-                context,
-                labelText: context.translate.sallary,
-                keyboardType: TextInputType.number,
-              ),
-              const SizedBox(height: 16),
-              SizedBox(
-                width: context.width,
-                child: ElevatedButton(
-                  onPressed: () {
-                    if (viewModel.addFormKey.currentState!.validate()) {}
-                  },
-                  child: Text(context.translate.ok),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+      child: Observer(builder: (context) {
+        return _renderBody(context);
+      }),
     );
   }
 }

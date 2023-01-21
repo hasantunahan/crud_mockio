@@ -26,4 +26,14 @@ class UserRepository implements IUserRepository {
       return User();
     }
   }
+
+  @override
+  Future<User> addNewChef(User user) async {
+    try {
+      final res = await userService.addNewUser(user);
+      return res;
+    } catch (e) {
+      return User();
+    }
+  }
 }
