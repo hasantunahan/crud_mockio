@@ -1,5 +1,7 @@
 import 'package:crud_mockio/injection.dart';
+import 'package:crud_mockio/product/manager/provider/provider_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'product/config/environment/environment_preset.dart';
 
 Future<void> main() async {
@@ -7,7 +9,10 @@ Future<void> main() async {
   final env = _setEnvironment();
   injectAll(environment: env);
   runApp(
-    const MyApp(),
+    MultiProvider(
+      providers: ProviderManager.instance.listOfProvider,
+      child: const MyApp(),
+    ),
   );
 }
 
