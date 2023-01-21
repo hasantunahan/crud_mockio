@@ -4,7 +4,6 @@ part 'colors/colors.dart';
 part 'text_theme/text_themes.dart';
 
 class ApplicationTheme {
-
   static ThemeData defaultTheme = ThemeData(
     useMaterial3: true,
     colorScheme: ColorScheme.fromSwatch().copyWith(
@@ -36,17 +35,25 @@ class ApplicationTheme {
       backgroundColor: _DefaultThemeColors.white,
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: _DefaultThemeColors.secondary,
-      toolbarHeight: kToolbarHeight * 1.8,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(24),
-          bottomRight: Radius.circular(24),
+        backgroundColor: _DefaultThemeColors.secondary,
+        toolbarHeight: kToolbarHeight * 1.8,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(24),
+            bottomRight: Radius.circular(24),
+          ),
         ),
-      ),
-      iconTheme: IconThemeData(
-        color: _DefaultThemeColors.white,
-      )
+        iconTheme: IconThemeData(
+          color: _DefaultThemeColors.white,
+        )),
+    inputDecorationTheme: const InputDecorationTheme(
+      border: OutlineInputBorder(),
+      labelStyle: TextStyle(color: _DefaultThemeColors.secondary),
+      errorStyle: TextStyle(color: _DefaultThemeColors.error),
+      focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+        color: _DefaultThemeColors.tertiary,
+      )),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
@@ -61,8 +68,7 @@ class ApplicationTheme {
           },
         ),
         shape: MaterialStateProperty.resolveWith<OutlinedBorder>((_) {
-          return RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16));
+          return RoundedRectangleBorder(borderRadius: BorderRadius.circular(16));
         }),
         foregroundColor: MaterialStateProperty.resolveWith((states) {
           return states.contains(MaterialState.disabled)
@@ -79,9 +85,8 @@ class ApplicationTheme {
         side: MaterialStateProperty.resolveWith(
           (states) => BorderSide(
             width: 1,
-            color: states.contains(MaterialState.disabled)
-                ? _DefaultThemeColors.inactive
-                : _DefaultThemeColors.tertiary,
+            color:
+                states.contains(MaterialState.disabled) ? _DefaultThemeColors.inactive : _DefaultThemeColors.tertiary,
           ),
         ),
       ),

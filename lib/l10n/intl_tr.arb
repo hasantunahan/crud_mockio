@@ -11,5 +11,13 @@
   "delete_chef_confirm": "Şefi silmek istediğinize emin misiniz?",
   "ok" : "Tamam",
   "cancel": "İptal",
-  "operation_successfully": "İşlem başarılı"
+  "operation_successfully": "İşlem başarılı",
+  "name" : "Ad",
+  "surname" : "Soyad",
+  "phone_number" : "Telefon Numarası",
+  "birth_date" : "Doğum Tarihi",
+  "identity" : "TCKN",
+  "sallary" : "Maaş",
+  "required" : "Bu alan zorunludur",
+  "tckn_invalid" : "Geçerli TC numarası giriniz"
 }

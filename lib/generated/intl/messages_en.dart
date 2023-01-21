@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add_new_chef": MessageLookupByLibrary.simpleMessage("Add New Chef"),
+        "birth_date": MessageLookupByLibrary.simpleMessage("Birth Date"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "change_en": MessageLookupByLibrary.simpleMessage("English"),
         "change_tr": MessageLookupByLibrary.simpleMessage("Türkçe"),
@@ -31,12 +32,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "delete_chef": MessageLookupByLibrary.simpleMessage("Delete Chef"),
         "delete_chef_confirm": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to delete the chef?"),
+        "identity": MessageLookupByLibrary.simpleMessage("Identity"),
         "language_chose":
             MessageLookupByLibrary.simpleMessage("Language Choose"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "operation_successfully":
             MessageLookupByLibrary.simpleMessage("Operation Successfully"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "required":
+            MessageLookupByLibrary.simpleMessage("This field is required"),
+        "sallary": MessageLookupByLibrary.simpleMessage("Sallary"),
         "splash_view": MessageLookupByLibrary.simpleMessage("Splash View"),
+        "surname": MessageLookupByLibrary.simpleMessage("Surname"),
+        "tckn_invalid":
+            MessageLookupByLibrary.simpleMessage("Enter valid TC number"),
         "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
         "user_not_found":
             MessageLookupByLibrary.simpleMessage("Chef list not found")

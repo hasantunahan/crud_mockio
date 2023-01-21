@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add_new_chef": MessageLookupByLibrary.simpleMessage("Yeni Şef Ekle"),
+        "birth_date": MessageLookupByLibrary.simpleMessage("Doğum Tarihi"),
         "cancel": MessageLookupByLibrary.simpleMessage("İptal"),
         "change_en": MessageLookupByLibrary.simpleMessage("English"),
         "change_tr": MessageLookupByLibrary.simpleMessage("Türkçe"),
@@ -30,11 +31,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "delete_chef": MessageLookupByLibrary.simpleMessage("Şefi Sil"),
         "delete_chef_confirm": MessageLookupByLibrary.simpleMessage(
             "Şefi silmek istediğinize emin misiniz?"),
+        "identity": MessageLookupByLibrary.simpleMessage("TCKN"),
         "language_chose": MessageLookupByLibrary.simpleMessage("Dil Seçimi"),
+        "name": MessageLookupByLibrary.simpleMessage("Ad"),
         "ok": MessageLookupByLibrary.simpleMessage("Tamam"),
         "operation_successfully":
             MessageLookupByLibrary.simpleMessage("İşlem başarılı"),
+        "phone_number":
+            MessageLookupByLibrary.simpleMessage("Telefon Numarası"),
+        "required": MessageLookupByLibrary.simpleMessage("Bu alan zorunludur"),
+        "sallary": MessageLookupByLibrary.simpleMessage("Maaş"),
         "splash_view": MessageLookupByLibrary.simpleMessage("Açılış Ekranı"),
+        "surname": MessageLookupByLibrary.simpleMessage("Soyad"),
+        "tckn_invalid":
+            MessageLookupByLibrary.simpleMessage("Geçerli TC numarası giriniz"),
         "unknown": MessageLookupByLibrary.simpleMessage("Bilinmeyen"),
         "user_not_found":
             MessageLookupByLibrary.simpleMessage("Şef listesi bulunamadı")

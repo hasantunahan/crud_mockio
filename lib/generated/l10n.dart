@@ -179,6 +179,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Surname`
+  String get surname {
+    return Intl.message(
+      'Surname',
+      name: 'surname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_number {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Birth Date`
+  String get birth_date {
+    return Intl.message(
+      'Birth Date',
+      name: 'birth_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Identity`
+  String get identity {
+    return Intl.message(
+      'Identity',
+      name: 'identity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sallary`
+  String get sallary {
+    return Intl.message(
+      'Sallary',
+      name: 'sallary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get required {
+    return Intl.message(
+      'This field is required',
+      name: 'required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter valid TC number`
+  String get tckn_invalid {
+    return Intl.message(
+      'Enter valid TC number',
+      name: 'tckn_invalid',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
