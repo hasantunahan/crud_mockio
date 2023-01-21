@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "chef_management": MessageLookupByLibrary.simpleMessage("Şef Yönetimi"),
         "splash_view": MessageLookupByLibrary.simpleMessage("Açılış Ekranı")
       };
 }

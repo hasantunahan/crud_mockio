@@ -7,8 +7,24 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
-        child: Text(context.translate.splash_view),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/splash_view.png',
+              width: context.width * .5,
+              fit: BoxFit.cover,
+            ),
+            Text(
+              context.translate.chef_management,
+              style: context.theme.textTheme.headline6?.copyWith(
+                color: Colors.white,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

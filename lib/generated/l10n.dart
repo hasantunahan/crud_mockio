@@ -59,6 +59,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Chef Management`
+  String get chef_management {
+    return Intl.message(
+      'Chef Management',
+      name: 'chef_management',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

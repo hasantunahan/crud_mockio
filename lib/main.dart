@@ -1,6 +1,7 @@
 import 'package:crud_mockio/generated/l10n.dart';
 import 'package:crud_mockio/injection.dart';
 import 'package:crud_mockio/product/config/navigation/navigation_service.dart';
+import 'package:crud_mockio/product/config/theme/application_theme.dart';
 import 'package:crud_mockio/product/manager/provider/child/language_provider.dart';
 import 'package:crud_mockio/product/manager/provider/provider_manager.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'CRUD MOCKIO',
+      title: 'CHEF CRUD MOCKIO',
+      theme: ApplicationTheme.defaultTheme,
       locale:
           Provider.of<LanguageProvider>(context, listen: true).currentLocale,
       localizationsDelegates: const [
