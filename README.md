@@ -1,5 +1,14 @@
 # CHEF CRUD MOCK IO 🌱
 
+## Installation
+
+1. flutter pub get
+2. flutter pub run build_runner build --delete-conflicting-outputs
+
+## For IOS
+1. cd ios && pod install
+
+
 ## VERSIONS
 
 Instructions on how to use them in your own application are linked below.
@@ -23,22 +32,14 @@ For State Management
 -json_serializable: ^6.3.1
 
 # rest api
--retrofit: ^3.0.0
--dio: ^4.0.3
+ 1. retrofit: ^3.0.0
+ 2. dio: ^4.0.3
 
 # State Management
--provider: ^6.0.2
--mobx: ^2.0.6+1
--mobx_codegen: ^2.0.5+2
--flutter_mobx: ^2.0.4
-
-## Installation
-
-1. flutter pub get
-2. flutter pub run build_runner build --delete-conflicting-outputs
-
-## For IOS
-1. cd ios && pod install
+ 1. provider: ^6.0.2
+ 2. mobx: ^2.0.6+1
+ 3. mobx_codegen: ^2.0.5+2
+ 4. flutter_mobx: ^2.0.4
 
 
 ## SS
