@@ -24,6 +24,7 @@ class _HomeViewState extends State<HomeView> {
 
   ListView _renderListOfUser() {
     return ListView.builder(
+      shrinkWrap: true,
       itemCount: viewModel.listOfUser!.length,
       itemBuilder: (context, index) {
         final user = viewModel.listOfUser![index];
@@ -59,7 +60,21 @@ class _HomeViewState extends State<HomeView> {
       if (viewModel.listOfUser?.isNotEmpty == false) {
         return _renderUserNotFound();
       } else {
-        return _renderListOfUser();
+        return Column(
+          children: [
+            SizedBox(
+              width: context.width,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(context.translate.add_new_chef),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+              child: _renderListOfUser(),
+            ),
+          ],
+        );
       }
     }
   }

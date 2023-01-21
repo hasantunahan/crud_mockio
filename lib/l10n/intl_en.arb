@@ -5,5 +5,6 @@
   "unknown" : "Unknown",
   "language_chose" : "Language Choose",
   "change_tr" : "Türkçe",
-  "change_en" : "English"
+  "change_en" : "English",
+  "add_new_chef" : "Add New Chef"
 }

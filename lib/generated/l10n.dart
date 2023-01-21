@@ -119,6 +119,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Add New Chef`
+  String get add_new_chef {
+    return Intl.message(
+      'Add New Chef',
+      name: 'add_new_chef',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
